@@ -1,3 +1,4 @@
+import StyledButton from "@/components/StyledButton";
 import StyledText from "@/components/StyledText";
 import { COLORS } from "@/constants/ui";
 import React from "react";
@@ -14,6 +15,7 @@ const TodoItem = ({ title, isCompleted }: TodoProps) => {
 			<StyledText style={{ textDecorationLine: isCompleted ? "line-through" : "none" }}>
 				{title}
 			</StyledText>
+			<StyledButton label="Delete" />
 		</View>
 	);
 };
