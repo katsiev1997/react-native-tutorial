@@ -1,4 +1,5 @@
 import StyledButton from "@/components/StyledButton";
+import StyledCheckbox from "@/components/StyledCheckbox";
 import StyledText from "@/components/StyledText";
 import { COLORS } from "@/constants/ui";
 import React from "react";
@@ -12,9 +13,12 @@ type TodoProps = {
 const TodoItem = ({ title, isCompleted }: TodoProps) => {
 	return (
 		<View style={[styles.container]}>
-			<StyledText style={{ textDecorationLine: isCompleted ? "line-through" : "none" }}>
-				{title}
-			</StyledText>
+			<View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+				<StyledCheckbox checked={isCompleted} onCheck={() => {}} />
+				<StyledText style={{ textDecorationLine: isCompleted ? "line-through" : "none" }}>
+					{title}
+				</StyledText>
+			</View>
 			<View style={styles.controls_container}>
 				<StyledButton icon="pencil" size="small" />
 				<StyledButton icon="trash" size="small" variant="delete" />
